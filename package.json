@@ -1,0 +1,16 @@
+{
+  "name": "craigslist-image-search",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.2",
+    "jade": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/freethejazz/craigslist-image-search.git"
+  }
+}
