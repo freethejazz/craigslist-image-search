@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app-container"></div>
+<script src="js/lib/jquery-1.9.1.min.js"></script>
+<script src="js/lib/underscore-min.js"></script>
+<script src="js/lib/backbone-min.js"></script>
+<script src="js/lib/handlebars.js"></script>
+
+<script src="js/models/result.js"></script>
+<script src="js/collections/results.js"></script>
+<script src="js/views/result.js"></script>
+<script src="js/views/app.js"></script>
+<script src="js/app.js"></script>
+
+<!-- templates  -->
+<script id="app" type="x-handlebars-template">
+<div class="search-panel">
+<label>Search for</label><input type="text" class="search-text" />
+<input class="search-button" type="submit" value="Search" />
+</div>
+<div class="results-panel"></div>
+</script>
+<script id="result" type="x-handlebars-template">
+  <img class="result-img" src="{{imgUrl}}"/>
+  <div class="result-detail">
+    <h2><a href="{{postUrl}}" target="_blank">{{title}}</a></h2>
+    <p>{{#if price}}For {{price}}{{else}}Price Unlisted{{/if}} on {{date}}</p>
+  </div>
+</script>
+<script type="x-handlebars-template"></script>
+</body>
+</html>
