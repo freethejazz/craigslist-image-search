@@ -4,7 +4,8 @@ $(function() {
   app.AppView = Backbone.View.extend({
     el: '#app-container',
     events: {
-      'click .search-button': 'search'
+      'click .search-button': 'search',
+      'keyup .search-text':'checkEnter'
     },
     initialize: function(){
       this.$el.html($('#app').html());
@@ -24,6 +25,12 @@ $(function() {
     addResult: function(result){
       var resView = new app.ResultView({model: result});
       this.resultPanel.append(resView.render().el);
+    },
+    checkEnter: function(ev){
+      if( ev.keyCode === 13 ){
+        this.$('.search-text').trigger('focus');
+        this.search();
+      }
     },
     search: function(){
       var q = encodeURI(this.searchText.val());

@@ -19,7 +19,7 @@
 <!-- templates  -->
 <script id="app" type="x-handlebars-template">
 <div class="search-panel">
-<label>Search for</label><input type="text" class="search-text" />
+<input type="text" class="search-text" placeholder="Search in furniture"/>
 <input class="search-button" type="submit" value="Search" />
 </div>
 <div class="results-panel"></div>
@@ -27,7 +27,7 @@
 <script id="result" type="x-handlebars-template">
   <img class="result-img" src="{{imgUrl}}"/>
   <div class="result-detail">
-    <h2><a href="{{postUrl}}" target="_blank">{{title}}</a></h2>
+    <h2><a href="{{postUrl}}" target="_blank">{{{title}}}</a></h2>
     <p>{{#if price}}For {{price}}{{else}}Price Unlisted{{/if}} on {{date}}</p>
   </div>
 </script>

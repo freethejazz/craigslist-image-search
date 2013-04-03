@@ -55,7 +55,13 @@ SearchDriver.prototype.processResultsPage = function(data){
 
   if(singleResults){
     for(i = 0, ii = singleResults.length; i < ii; i++){
-      retObj.results.push(this.makeResultsObj(singleResults[i]));
+      var resultObj = this.makeResultsObj(singleResults[i]);
+
+      if(this.checkUpperCase(resultObj.title)){
+        continue;
+      }
+
+      retObj.results.push(resultObj);
     }
   }
 
@@ -88,6 +94,19 @@ SearchDriver.prototype.makeResultsObj = function(one){
   }
 
   return obj;
+}
+SearchDriver.prototype.checkUpperCase = function(str){
+  if(!str) return;
+
+  var strLen = str.length,
+    idx = 0,
+    capsFound = 0;
+
+  for(;idx < strLen; idx++){
+    str.charCodeAt(idx) >= 61 && str.charCodeAt(idx) <= 90 && capsFound++
+    if(capsFound/strLen > .3) return true;
+  }
+  return false;
 }
 
 exports.SearchDriver = SearchDriver;
