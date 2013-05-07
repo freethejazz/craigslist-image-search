@@ -81,11 +81,11 @@ SearchDriver.prototype.makeResultsObj = function(one){
     obj.postUrl = postUrl[1];
   }
 
-  if( title = one.match(/\<a href=\".*?\"\>(.*?)\<\/a\>/)){
+  if( title = one.match(/\<span class=\"pl\">.*?\<a href=\".*?\"\>(.*?)\<\/a\>/)){
     obj.title = title[1];
   }
 
-  if( price = one.match(/\<span class=\"itempp\"\>(.*?)\<\/span\>/)){
+  if( price = one.match(/\<span class=\"itemprice\"\>(.*?)\<\/span\>/)){
     obj.price = price[1];
   }
 
