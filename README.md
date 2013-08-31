@@ -1,4 +1,4 @@
 craigslist-image-search
 =======================
 
-A better way to browse image listings on craigslist
+Playing around with scraping search results for pictures and putting them in a tiled display.
